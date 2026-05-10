@@ -223,16 +223,20 @@ def parse_time(text):
     except: return None
 
 def main_buttons():
-    kb = InlineKeyboardMarkup(row_width=2)
+    kb = InlineKeyboardMarkup()
     kb.add(
-        InlineKeyboardButton("ဘဝ သမားလေး", url="https://t.me/HANTHAR999"),
-        InlineKeyboardButton(" စကားပြော ", url="https://t.me/myanmar_music_Bot2027"),
-        InlineKeyboardButton(
-            "➕ ထည့်သွင်းရန်",
-            url="https://t.me/MYANMAR_FRIEND_BOT?startgroup=s&delete_message+manage_video_chats_message+invite_users"
-        ),
-        InlineKeyboardButton("Botပြုလုပ်လိုပါက", url="tg://resolve?domain=HEX_KING9&text=Botအသစ်လုပ်ချင်လို့ပါ")
-    )
+         InlineKeyboardButton(
+            "➕Add To Your Group ထည့်သွင်းရန်",
+            url="https://t.me/{BOT_USERNAME}?startgroup=s&delete_message+manage_video_chats_message+invite_users")
+          )
+    kb.row(    
+         InlineKeyboardButton("DEV", url="https://t.me/HANTHAR999"),
+         InlineKeyboardButton(" စကားပြော ", url="https://t.me/myanmar_music_Bot2027")
+          )
+    kb.row(  
+        InlineKeyboardButton("Botပြုလုပ်လိုပါက", url="tg://resolve?domain=HEX_KING9&text=Botအသစ်လုပ်ချင်လို့ပါ"),
+        InlineKeyboardButton("UPDATE", url="https://t.me/myanmarbot_music")
+          )
     return kb
 
 # ======================
@@ -701,7 +705,7 @@ def start(message):
             join_kb = InlineKeyboardMarkup()
             clean_channel = FORCE_JOIN_CHANNEL.replace('@', '')
             join_kb.add(InlineKeyboardButton("Channal Join ပေးပါ", url=f"https://t.me/{clean_channel}"))
-            join_kb.add(InlineKeyboardButton("🔄  (စစ်ဆေးမည်)", url=f"https://t.me/MYANMAR_FRIEND_BOT?start=start"))
+            join_kb.add(InlineKeyboardButton("🔄  (စစ်ဆေးမည်)", url=f"https://t.me/{BOT_USERNAME}?start=start"))
             
             return bot.send_message(
                 message.chat.id, 
