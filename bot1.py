@@ -230,7 +230,7 @@ def main_buttons():
             url=f"https://t.me/{BOT_USERNAME}?startgroup=s&delete_message+manage_video_chats_message+invite_users")
           )
     kb.row(    
-         InlineKeyboardButton("DEV", url="https://t.me/HANTHAR999"),
+         InlineKeyboardButton("DEV", url="https://t.me/HANTHAR_1999"),
          InlineKeyboardButton(" စကားပြော ", url="https://t.me/myanmar_music_Bot2027")
           )
     kb.row(  
