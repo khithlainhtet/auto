@@ -633,13 +633,13 @@ def broadcast(message):
         try:
             # copy_message သည် Original Message ၏ ပုံစံ၊ Caption နှင့် Premium Emoji အားလုံးကို 
             # မူရင်းအတိုင်း ကူးယူပေးပို့သည်။ (Photo, Video, Sticker, Text, Audio အကုန်ရသည်)
-            bot.copy_message(
+            bot.forward_message(
                 chat_id=tid, 
                 from_chat_id=message.chat.id, 
                 message_id=target_msg.message_id
             )
             success += 1
-            time.sleep(0.1) # မြန်နှုန်းမြှင့်ထားသော်လည်း Flood မဖြစ်အောင် အနည်းငယ်ခြားထားသည်
+            time.sleep(0.3) # မြန်နှုန်းမြှင့်ထားသော်လည်း Flood မဖြစ်အောင် အနည်းငယ်ခြားထားသည်
         except Exception as e:
             print(f"Broadcast failed for {tid}: {e}")
             fail += 1
@@ -977,7 +977,7 @@ def handle_all(message):
             join_kb = InlineKeyboardMarkup()
             clean_channel = FORCE_JOIN_CHANNEL.replace('@', '')
             join_kb.add(InlineKeyboardButton(" Channel join", url=f"https://t.me/{clean_channel}"))
-            join_kb.add(InlineKeyboardButton(" Join (စစ်ဆေးမည်)", url=f"https://t.me/MYANMAR_FRIEND_BOT?start=start"))
+            join_kb.add(InlineKeyboardButton(" Join (စစ်ဆေးမည်)", url=f"https://t.me/{BOT_USERNAME}?start=start"))
             return bot.send_message(
                 message.chat.id,
                 "<tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji> <b>အသုံးပြုခွင့်မရှိသေးပါ!</b>\n\nဒီ Bot ကို သုံးဖို့အတွက် CHANNEL ကို အရင် Join ပေးရပါမယ်။",
